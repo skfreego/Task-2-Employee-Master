@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+
+<div class="jumbotron">
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+			{{form1.as_p}}
+			{{form2.as_p}}
+		<button>UPDATE</button>
+	</form>
+	</div>
+
+
+
+    {% endblock content %}

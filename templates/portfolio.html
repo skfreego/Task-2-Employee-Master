@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="container text-center">
+  <h3>Employee List</h3>
+  <br>
+  <!-- <p><em>We love music!</em></p> -->
+  <!-- <p>We have created a fictional band website. Lorem ipsum..</p> -->
+  <div class="row">
+      {% for i in doc_list%}
+    <div class="col-sm-4">
+      <a href="{% url 'empupdate' i.user_key.id %}">
+
+      <img src={{i.user_image.url}} alt="Random Name" width="255" height="255">
+      <p><strong>{{i.user_name}}</strong></p>
+      <p><strong>{{i.user_address}}</strong></p></a>
+    </div>
+
+    {%endfor%}
+  </div>
+</div>
+
+{% endblock content %}
